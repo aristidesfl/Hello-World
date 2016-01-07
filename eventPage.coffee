@@ -55,7 +55,7 @@ initialize = ->
 		initializeIntenta()
 
 	initializeIntenta = ->
-		return no if license.verified
+		return no if license.verified # Don't use intenta on licensed users
 		console.log 'initializeIntenta'
 		window.agent = new IntentaAgent();
 		window.agent.setEnv('production');
